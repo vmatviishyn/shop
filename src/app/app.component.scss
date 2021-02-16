@@ -1,0 +1,14 @@
+.shop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
+    app-product-list,
+    app-cart-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

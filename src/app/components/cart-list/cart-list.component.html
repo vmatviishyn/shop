@@ -1,0 +1,10 @@
+<h1>Cart</h1>
+
+<div *ngIf="products.length; else elseBlock">
+    <div *ngFor="let product of products">
+        <app-product [product]="product"></app-product>
+    </div>
+</div>
+
+
+<ng-template #elseBlock>Cart is empty</ng-template>
