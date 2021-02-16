@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { ProductModel } from 'src/app/models/product.model';
-import { CartService } from 'src/app/services/cart.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -9,11 +8,12 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
- @Input() product: ProductModel;
+ @Input() product: Product;
+ @Output() buyProduct: EventEmitter<Product> = new EventEmitter();
 
-  constructor(private cartService: CartService) { }
+  constructor() { }
 
-  onBuy(product: ProductModel): void {
-    this.cartService.addProduct(product);
+  onBuyProduct(product: Product): void {
+    this.buyProduct.emit(product);
   }
 }

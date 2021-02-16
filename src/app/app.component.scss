@@ -1,14 +1,5 @@
-.shop {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-
-    app-product-list,
-    app-cart-list {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }

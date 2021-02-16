@@ -1,8 +1,6 @@
 export enum Category {
-    Fashion = 'Fasion',
-    Books = 'Books',
-    Movies = 'Movies',
-    Electronics = 'Electronics',
-    Sport = 'Sport',
-    Health = 'Health'
+    iPhone = 'iPhone',
+    Mac = 'Mac',
+    AppleWatch = 'AppleWatch',
+    AirPods = 'AirPods'
 }
