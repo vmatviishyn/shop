@@ -7,7 +7,7 @@
   <img mat-card-image src="{{'assets/images/' + product.img}}">
 
   <mat-card-actions>
-    <button class="product__buy-btn" *ngIf="product.isAvailable" mat-button color="primary" (click)="onBuyProduct(product)">BUY</button>
+    <button class="product__buy-btn" *ngIf="product.isAvailable" mat-flat-button (click)="onBuyProduct(product)">Add to Cart</button>
     <p class="product__price">{{ product.price | currency: 'UAH':'symbol-narrow':'1.0-2' }}</p>
   </mat-card-actions>
 </mat-card>

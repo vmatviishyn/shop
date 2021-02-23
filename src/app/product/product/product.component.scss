@@ -35,14 +35,17 @@
     &__price {
         margin: 0;
         padding-right: 16px;
-        font-weight: 200;
+        font-weight: 400;
         width: 100%;
         text-align: right;
+        color: #434343;
     }
 
     &__buy-btn {
         color: #000000;
         font-weight: 200;
+        min-width: 100px;
+        background-color: #e8e8e8;
     }
 
     mat-card-actions {

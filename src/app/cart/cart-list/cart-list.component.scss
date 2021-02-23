@@ -1,0 +1,13 @@
+.cart-list {
+  &__cart-btn {
+    background-color: #e8e8e8;
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 10px;
+  }
+
+  &__empty-message {
+    text-align: center;
+    min-width: 280px;
+  }
+}

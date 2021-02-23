@@ -1,10 +1,30 @@
-<h1>Cart</h1>
+<div class="cart-list">
+    <button
+        [matMenuTriggerFor]="cartListMenu"
+        mat-icon-button
+        aria-label="Mini cart icon button">
+        <mat-icon
+            [matBadge]="products.length"
+            matBadgeSize="small"
+            matBadgeColor="warn"
+            class="material-icons material-icons-outlined">shopping_cart</mat-icon>
+    </button>
 
-<div *ngIf="products.length; else elseBlock">
-    <div *ngFor="let product of products">
-        <!-- <app-product [product]="product"></app-product> -->
-    </div>
+    <mat-menu
+        #cartListMenu="matMenu"
+        xPosition="before"
+        hasBackdrop="true"
+        backdropClass="backdrop">
+
+        <div *ngIf="products.length; else elseBlock">
+            <div *ngFor="let product of products">
+                <app-cart-item [product]="product"></app-cart-item>
+            </div>
+            <button mat-button class="cart-list__cart-btn">Go to Cart</button>
+        </div>
+
+        <ng-template #elseBlock>
+            <p class="cart-list__empty-message">Cart is empty</p>
+        </ng-template>
+    </mat-menu>
 </div>
-
-
-<ng-template #elseBlock>Cart is empty</ng-template>
