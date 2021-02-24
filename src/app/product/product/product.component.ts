@@ -13,7 +13,8 @@ export class ProductComponent {
 
   constructor() { }
 
-  onBuyProduct(product: Product): void {
+  onBuyProduct(product: Product, qty: number): void {
+    product.quantity = +qty;
     this.buyProduct.emit(product);
   }
 }

@@ -11,10 +11,31 @@ export class CartService {
   constructor() { }
 
   addProduct(product: Product): void {
-    this.products.push(product);
+    let foundProduct = this.products.find(pr => pr.code === product.code);
+
+    if (foundProduct) {
+      foundProduct.quantity += product.quantity;
+    } else {
+      this.products.push({ ...product });
+    }
+  }
+
+  removeProduct(productToRemove: Product): void {
+    this.products = this.products
+      .filter((product: Product) => product.code !== productToRemove.code);
   }
 
   getProducts(): Product[] {
     return this.products;
+  }
+
+  getCartTotal(): number {
+    if (this.products.length) {
+      return this.products.map(product => {
+        return product.quantity * product.price;
+      }).reduce((prev: number, next: number) => {
+        return prev + next;
+      });
+    }
   }
 }

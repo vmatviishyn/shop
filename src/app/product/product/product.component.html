@@ -7,7 +7,13 @@
   <img mat-card-image src="{{'assets/images/' + product.img}}">
 
   <mat-card-actions>
-    <button class="product__buy-btn" *ngIf="product.isAvailable" mat-flat-button (click)="onBuyProduct(product)">Add to Cart</button>
+    <ng-container *ngIf="product.isAvailable">
+      <button class="product__buy-btn" mat-flat-button (click)="onBuyProduct(product, qty.value)">Add to Cart</button>
+      <mat-form-field class="product__qty-wrapper">
+        <input class="product__qty" matInput type="number" #qty [value]="product.quantity" min="1">
+      </mat-form-field>
+    </ng-container>
+
     <p class="product__price">{{ product.price | currency: 'UAH':'symbol-narrow':'1.0-2' }}</p>
   </mat-card-actions>
 </mat-card>

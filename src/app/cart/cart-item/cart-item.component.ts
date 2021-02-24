@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 
 @Component({
@@ -8,6 +8,12 @@ import { Product } from 'src/app/models/product.model';
 })
 export class CartItemComponent {
   @Input() product: Product;
+  @Output() removeProduct: EventEmitter<Product> = new EventEmitter();
 
    constructor() { }
+
+   onCartItemRemove(event: MouseEvent) {
+     event.stopPropagation();
+     this.removeProduct.emit(this.product);
+   }
 }

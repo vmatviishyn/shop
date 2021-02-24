@@ -6,6 +6,19 @@
     margin-left: 10px;
   }
 
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__cart-total {
+    margin: 0;
+    font-weight: 200;
+    margin-right: 10px;
+  }
+
   &__empty-message {
     text-align: center;
     min-width: 280px;

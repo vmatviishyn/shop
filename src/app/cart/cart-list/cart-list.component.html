@@ -18,9 +18,18 @@
 
         <div *ngIf="products.length; else elseBlock">
             <div *ngFor="let product of products">
-                <app-cart-item [product]="product"></app-cart-item>
+                <app-cart-item
+                    (removeProduct)="onRemoveProduct($event)"
+                    [product]="product">
+                </app-cart-item>
             </div>
-            <button mat-button class="cart-list__cart-btn">Go to Cart</button>
+
+            <div class="cart-list__footer">
+                <button mat-button class="cart-list__cart-btn">Go to Cart</button>
+                <p class="cart-list__cart-total">
+                    Total: {{ cartTotal | currency: 'UAH':'symbol-narrow':'1.0-2' }}
+                </p>
+            </div>
         </div>
 
         <ng-template #elseBlock>

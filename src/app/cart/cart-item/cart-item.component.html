@@ -5,6 +5,13 @@
 
   <div class="cart-item__info">
     <p class="cart-item__name">{{ product.name }}</p>
-    <p class="cart-item__price">{{ product.price | currency: 'UAH':'symbol-narrow':'1.0-2' }}</p>
+    <p class="cart-item__qty">Quantity: {{ product.quantity }}</p>
+    <p class="cart-item__price">Price: {{ product.price | currency: 'UAH':'symbol-narrow':'1.0-2' }}</p>
+  </div>
+
+  <div class="cart-item__remove-btn-wrapper">
+    <button mat-icon-button aria-label="Remove cart item" (click)="onCartItemRemove($event)">
+      <mat-icon class="material-icons material-icons-outlined">close</mat-icon>
+    </button>
   </div>
 </div>
