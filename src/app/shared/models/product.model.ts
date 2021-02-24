@@ -1,4 +1,9 @@
-import { Category } from '../enums/category.enum';
+export enum Category {
+    iPhone = 'iPhone',
+    Mac = 'Mac',
+    AppleWatch = 'AppleWatch',
+    AirPods = 'AirPods'
+}
 
 export interface Product {
     name: string;
