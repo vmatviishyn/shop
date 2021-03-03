@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from 'src/app/models/product.model';
-import { CartService } from 'src/app/services/cart.service';
+import { Product } from 'src/app/shared/models/product.model';
+
+import { CartService } from 'src/app/cart/services/cart.service';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -22,7 +23,6 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuyProduct(product: Product): void {
-    console.log(`Product [${product.name}] added to cart!`);
     this.cartService.addProduct(product);
   }
 }
